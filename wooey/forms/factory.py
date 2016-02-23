@@ -168,7 +168,7 @@ class WooeyFormFactory(object):
         return d
 
     def get_master_form(self, script_version=None, pk=None):
-        pk = int(pk) if pk is not None else pk
+        pk = int(pk) if pk is not None or pk is not '' else None
         if pk is not None and pk in self.wooey_forms:
             if 'master' in self.wooey_forms[pk]:
                 if (version.PY_MINOR_VERSION == version.PY34 and version.PY_FULL_VERSION >= version.PY343) or \
